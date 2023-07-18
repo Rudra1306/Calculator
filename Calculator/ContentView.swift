@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var currentValue: String = "0"
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        ZStack {
+            Color.black
+                .ignoresSafeArea(.all)
+            VStack {
+                TotalText(value: currentValue)
+                ButtonGrid(currentValue: $currentValue)
+            }
         }
-        .padding()
     }
 }
 
